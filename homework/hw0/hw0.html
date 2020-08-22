@@ -1,0 +1,253 @@
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"></code></pre></div>
+<h1 id="mcis6273-data-mining-prof.-maull-fall-2020-hw0">MCIS6273 Data Mining (Prof. Maull) / Fall 2020 / HW0</h1>
+<p><strong>This assignment is worth up to 20 POINTS to your grade total if you complete it on time.</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Points <br/>Possible</th>
+<th style="text-align: center;">Due Date</th>
+<th style="text-align: center;">Time Commitment <br/>(estimated)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">Wednesday, Sep 2 @ Midnight</td>
+<td style="text-align: center;"><em>up to</em> 20 hours</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>GRADING:</strong> Grading will be aligned with the completeness of the objectives.</p></li>
+<li><p><strong>INDEPENDENT WORK:</strong> Copying, cheating, plagiarism and academic dishonesty <em>are not tolerated</em> by University or course policy. Please see the syllabus for the full departmental and University statement on the academic code of honor.</p></li>
+</ul>
+<h2 id="objectives">OBJECTIVES</h2>
+<ul>
+<li><p>Familiarize yourself with the JupyterLab environment, Markdown and Python</p></li>
+<li><p>Familiarize yourself with Github and basic git</p></li>
+<li><p>Explore JupyterHub Linux console integrating what you learned in the prior parts of this homework</p></li>
+<li><p>Listen to the O’Reilly Data Show Podcast from July 18, 2019: Acquiring and shairing high-quality data with Rogen Chen</p></li>
+<li><p>Explore Python for data munging and analysis, with an introduction to CSV and Pandas</p></li>
+</ul>
+<h2 id="what-to-turn-in">WHAT TO TURN IN</h2>
+<p>You are being encouraged to turn the assignment in using the provided Jupyter Notebook. To do so, make a directory in your Lab environment called <code>homework/hw0</code>. Put all of your files in that directory. Then zip that directory, rename it with your name as the first part of the filename (e.g. <code>maull_hw0_files.zip</code>), then download it to your local machine, then upload the <code>.zip</code> to Blackboard.</p>
+<p>If you do not know how to do this, please ask, or visit one of the many tutorials out there on the basics of using zip in Linux.</p>
+<p>If you choose not to use the provided notebook, you will still need to turn in a <code>.ipynb</code> Jupyter Notebook and corresponding files according to the instructions in this homework.</p>
+<h2 id="assignment-tasks">ASSIGNMENT TASKS</h2>
+<h3 id="familiarize-yourself-with-the-jupyterlab-environment-markdown-and-python">(0%) Familiarize yourself with the JupyterLab environment, Markdown and Python</h3>
+<p>As stated in the course announcement <a href="https://jupyter.org">Jupyter (https://jupyter.org)</a> is the core platform we will be using in this course and is a popular platform for data scientists around the world. We have a JupyterLab setup for this course so that we can operate in a cloud-hosted environment, free from some of the resource contraints of running Jupyter on your local machine (though you are free to set it up on your own and seek my advice if you desire).</p>
+<p>You have been given the information about the Jupyter envitonment we have setup for our course, and the underlying Python environment will be using is the <a href="https://anaconda.com">Anaconda (https://anaconda.com)</a> distribution. It is not necessary for this assignment, but you are free to look at the multitude of packages installed with Anaconda, though we will not use the majority of them explicitly.</p>
+<p>As you will soon find out, Notebooks are an incredibly effective way to mix code with narrative and you can create cells that are entirely code or entirely Markdown. Markdown (MD or <code>md</code>) is a highly readable text format that allows for easy documentation of text files, while allowing for HTML-based rendering of the text in a way that is style-independent.</p>
+<p>We will be using Markdown frequently in this course, and you will learn that there are many different “flavors” or Markdown. We will only be using the basic flavor, but you will benefit from exploring the “Github flavored” Markdown, though you will not be responsible for using it in this course – only the “basic” flavor. Please refer to the original course announcement about Markdown.</p>
+<p>§ <strong>THERE IS NOTHING TO TURN IN FOR THIS PART.</strong> Play with and become familiar with the basic functions of the Lab environment given to you online in the course Blackboard.</p>
+<p>§ <strong>PLEASE <em>CREATE A MARKDOWN DOCUMENT</em> CALLED <code>semester_goals.md</code> WITH 3 SENTENCES/FRAGMENTS THAT ANSWER THE FOLLOWING QUESTION:</strong></p>
+<ul>
+<li><strong>What do you wish to accomplish this semester in Data Mining?</strong></li>
+</ul>
+<p>Read the documentation for basic Markdown <a href="https://www.markdownguide.org/basic-syntax">here</a>. Turn in the text <code>.md</code> file <em>not</em> the processed <code>.html</code>. In whatever you turn in, you must show the use of <em>ALL</em> the following:</p>
+<ul>
+<li>headings (one level is fine),</li>
+<li>bullets,</li>
+<li>bold and italics</li>
+</ul>
+<p>Again, the content of your document needs to address the question above and it should live in the top level directory of your assignment submission. This part will be graded but no points are awarded for your answer.</p>
+<h3 id="familiarize-yourself-with-github-and-basic-git">(0%) Familiarize yourself with Github and basic git</h3>
+<p><a href="https://github.com">Github (https://github.com)</a> is the <em>de facto</em> platform for open source software in the world based on the very popular <a href="https://git-scm.org">git (https://git-scm.org)</a> version control system. Git has a sophisticated set of tools for version control based on the concept of local repositories for fast commits and remote repositories only when collaboration and remote synchronization is necessary. Github enhances git by providing tools and online hosting of public and private repositories to encourage and promote sharing and collaboration. Github hosts some of the world’s most widely used open source software.</p>
+<p><strong>If you are already familiar with git and Github, then this part will be very easy!</strong></p>
+<p>§ <strong>CREATE A PUBLIC GITHUB REPO NAMED <code>"mcis6273-F20-datamining"</code> AND PLACE A README.MD FILE IN IT.</strong> Create your first file called <code>README.md</code> at the top level of the repository. You can put whatever text you like in the file (If you like, use something like <a href="https://lipsum.com/">lorem ipsum</a> to generate random sentences to place in the file.). Please include the link to <strong>your</strong> Github repository that now includes the minimal <code>README.md</code>. You don’t have to have anything elaborate in that file or the repo.</p>
+<h3 id="explore-jupyterhub-linux-console-integrating-what-you-learned-in-the-prior-parts-of-this-homework">(0%) Explore JupyterHub Linux console integrating what you learned in the prior parts of this homework</h3>
+<p>The Linux console in JupyterLab is a great way to perform command-line tasks and is an essential tool for basic scripting that is part of a data scientist’s toolkit. Open a console in the lab environment and familiarize yourself with your files and basic commands using git as indicated below.</p>
+<ol type="1">
+<li>In a new JupyterLab command line console, run the <code>git clone</code> command to clone the new repository you created in the prior part. You will want to read the documentation on this command (try here <a href="https://www.git-scm.com/docs/git-clone">https://www.git-scm.com/docs/git-clone</a> to get a good start).</li>
+<li>Within the same console, modify your <code>README.md</code> file, check it in and push it back to your repository, using <code>git push</code>. Read the <a href="https://git-scm.com/docs/git-push">documentation about <code>git push</code></a>.</li>
+<li>The commands <code>wget</code> and <code>curl</code> are useful for grabbing data and files from remote resources off the web. Read the documentation on each of these commands by typing <code>man wget</code> or <code>man curl</code> in the terminal. Make sure you pipe the output to a file or use the proper flags to do so.</li>
+</ol>
+<p>§ <strong>THERE IS NOTHING TO TURN IN FOR THIS PART.</strong></p>
+<h3 id="listen-to-the-oreilly-data-show-podcast-from-july-18-2019-acquiring-and-shairing-high-quality-data-with-rogen-chen">(40%) Listen to the O’Reilly Data Show Podcast from July 18, 2019: Acquiring and shairing high-quality data with Rogen Chen</h3>
+<p>Data is one of the most important components of modern business and, of course, data manifests in many forms, and involves producers, consumers and value-added uses of data. Recently, data has become the source of contention, especially as large companies continue to take control of individual’s data and use it in ways that do no benefit, and in some cases are used in ways that were neither approved or known by, the the individual directly.</p>
+<p>There are a number of interesting movements in data protection, such as the European Union’s GDPR (General Data Protection Regulation - <a href="https://eugdpr.org">https://eugdpr.org</a>) that are trying to hold companies account for how individual’s data are collected, accessed, shared, distrubuted and protected. Some argue these efforts don’t go far enough to acknowledge the true value of data and don’t provide access to controlling data in ways that would benefit the individual directly, should they want to have it knowingly used and offered as a product to companies. In scenarios like these, the individual is then brought into the data transaction as a producer, and companies act as consumers that add value to other consumers, etc.</p>
+<p>Blockchain has been proposed as a technology that might provide a way to coordinate the development of decentralized and distrubuted data “ledgers” that may provide a more complete platform to share data, trace it’s lineage, but also validate and facilitate data transactions between consumers and producers.</p>
+<p>In this podcast, <a href="https://www.oreilly.com/talent/4e7ad-ben-lorica">Ben Lorica</a> interviews Roger Chen, CEO of Computable Labs, about his recent paper <em>“Fair value and decentralized governance of data”</em>. Though it is not necessary, you are encouraged to read the very accessible white paper Chen, et al published in June which forms the basis of parts of the conversation in the podcast (that paper is on Github here: <a href="%5Bhttps://git.io/fjpTv%5D()">https://git.io/fjpTv</a>).</p>
+<p>Please listen to the Podcast released July 18, 2019 <em>“Acquiring and Sharing High-Quality Data”</em> on the O’Reilly Data Show. You can listen to it from one of the two links below:</p>
+<ul>
+<li><p><a href="https://soundcloud.com/oreilly-radar/acquiring-and-sharing-high-quality-data">https://soundcloud.com/oreilly-radar/acquiring-and-sharing-high-quality-data</a></p></li>
+<li><p><a href="https://www.oreilly.com/ideas/acquiring-and-sharing-high-quality-data">https://www.oreilly.com/ideas/acquiring-and-sharing-high-quality-data</a></p></li>
+</ul>
+<p>§ <strong>PLEASE ANSWER THE FOLLOWING 8 QUESTIONS AFTER LISTENING TO THE PODCAST:</strong></p>
+<ol type="1">
+<li><p>Early in the interview Roger was asked what problems were being approached (and attempted to being solved) through the white paper “Fair value and decentralized governance of data”. What two core areas of data did Roger say he and his Computable Labs company trying to solve?</p></li>
+<li><p>In the Enterprise use case, what did Roger say about how to determine who owns data?</p></li>
+<li><p>What did Roger say are some of the problems with company’s centralizing data as it stands right now?</p></li>
+<li><p>Roger describes a simple example of the basic workflow of how data is served by his technology through the use of decentralized “protocol contracts” and what he calls the “Datatrust” storage. In your own words, describe how this process works.</p></li>
+<li><p>Roger suggests a data marketplace model of service providers so that there is decentralized universal access to data, and mentions how “next generation crowd-source models” will propel the fair market value of data. What property did he say this fair market value would be based on to derive this value?</p></li>
+<li><p>Roger is bullish on Data privacy and encryption technologies and how we might have a future where data on the Internet is open, fully encrypted and secure “in the open”. What two companies did he think would be one’s to watch in this space?</p></li>
+<li><p>What is a “synthetic” dataset (as described in the interview), and what problems did Ben challenge Roger on with a market where these datasets might exist?</p></li>
+<li><p>Which Blockchain network will the project be available for testing?</p></li>
+</ol>
+<h3 id="explore-python-for-data-munging-and-analysis-with-an-introduction-to-csv-and-pandas">(60%) Explore Python for data munging and analysis, with an introduction to CSV and Pandas</h3>
+<p>Python’s strengths shine when tasked with data munging and analysis. As we will learn throughout the course, there are a number of excellent data sources for open data of all kinds now available for the public. These open data sources are heralding the new era of transparency from all levels from small municipal data to big government data, from transportation, to science, to education.</p>
+<p>To warm up to such datasets, we will be working with an interesting dataset of enrollment data from the University of Hawaii system. This data is in a CSV (comman-separated-values) format and like many datasets out there, requires a bit of restructuring to derive value from it.</p>
+<p>CSV is a format that you will often see as a <em>de facto</em> format for data that is relatively flat or well adapted to tabular analyses. You will also see JSON as the standard format for developing structured data, but luckily we will be able to use Python tools (specifically Pandas) to work with these types of data easily.</p>
+<p>The data we are going to use can be accessed via APIs but we will not need to access it that way for this part of the exercise. Instead, we will be able to load it directly.</p>
+<p>In this part of the assignment, we will make use of Python libraries to pull the data from the endpoint and use <a href="https://pandas.pydata.org">Pandas</a> to plot the data. The raw CSV data is readily imported into Pandas from the following URL:</p>
+<ul>
+<li><a href="https://opendata.hawaii.gov/dataset/university-of-hawaii-enrollment-by-zip/resource/18857159-3524-4abc-8cb1-107b4207e734">Hawaii.gov Open Data for University of Hawaii enrollment</a></li>
+</ul>
+<p>Please take a look at the page, on it you will notice a link to the raw CSV file:</p>
+<ul>
+<li><a href="https://opendata.hawaii.gov/dataset/01dc1eab-6627-4843-87c3-f78b922fca4e/resource/18857159-3524-4abc-8cb1-107b4207e734/download/enrollment-by-zipcode.csv">https://opendata.hawaii.gov/dataset/01dc1eab-6627-4843-87c3-f78b922fca4e/resource/18857159-3524-4abc-8cb1-107b4207e734/download/enrollment-by-zipcode.csv</a></li>
+</ul>
+<p>We are going to explore this dataset to learn a bit more about the enrollment characteristics of the University system over the past half decade or so.</p>
+<p>§ <strong>WRITE THE CODE IN YOUR NOTEBOOK TO LOAD AND RESHAPE THE COMPLETE CSV ENROLLMENT DATASET</strong>:</p>
+<p>You will need to perform the following steps:</p>
+<ol type="1">
+<li><strong>use <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html"><code>pandas.read_csv()</code></a> method to load the dataset</strong> into a Pandas DataFrame;</li>
+<li><strong>clean the data so that all zip codes are normalized to just the ZIP5 format (e.g. 80246) not the ZIP5 + 4 (e.g. 80248-1234) format</strong>; some of the data do not adhere the ZIP5 at all, so just remove them completely;</li>
+<li><strong>create a column <code>YEAR</code> in your dataset for the year</strong> you will notice that the original column <code>SEMESTER</code> is the form <code>Fall 20nn</code>. You will need to split this and just keep the year;</li>
+<li><strong>drop the <code>HAWAIIAN_LEGACY</code> column</strong> – we will not need it;</li>
+<li><strong>eliminate any rows of data with <code>NaN</code> data in it</strong>;</li>
+<li><strong>store the entire dataset back into a new CSV</strong> file called <code>hawaii_enrollments.csv</code>.</li>
+</ol>
+<p><strong>HINTS:</strong> <em>Here are some a code hints you might like to study and use to craft a solution:</em></p>
+<ul>
+<li>study the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.html?highlight=str#pandas.Series.str"><code>pandas.Series.str</code></a> functionality to understand how you might turn the zip codes into ZIP5 format.</li>
+<li>study the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html?highlight=dropna#pandas.DataFrame.dropna"><code>pandas.DataFrame.dropna()</code></a> method to drop rows with <code>NaN</code> values.</li>
+<li>study the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html?highlight=drop#pandas.DataFrame.drop"><code>pandas.DataFrame.drop(columns='xxx')</code></a> to understand how to remove columns from your DataFrame.</li>
+</ul>
+<p>§ <strong>USE PANDAS TO LOAD THE CSV DATA TO A DATAFRAME AND ANSWER THE FOLLOWING QUESTIONS:</strong></p>
+<ol type="1">
+<li>How many total students were cummulatively enrolled in total from 2014 to 2019?</li>
+<li>Which campus had the most cummulatively enrolled students from 2014-2019 (and what is that value)?</li>
+<li>Which campus has the least?</li>
+<li>Which Hawaii zip code does the largest number of students come from (across all campuses)?</li>
+<li>Which Hawaii zip code does the largest number of students come from for the Manoa flagship campus?</li>
+</ol>
+<p>To answer these questions, you’ll need to dive further into Pandas, which is the standard tool in the Python data science stack for loading, manipulating, transforming, analyzing and preparing data as input to other tools such as <a href="http://www.numpy.org/">Numpy (http://www.numpy.org/)</a>, <a href="http://scikit-learn.org/stable/index.html">SciKitLearn (http://scikit-learn.org/stable/index.html)</a>, <a href="http://www.nltk.org/">NLTK (http://www.nltk.org/)</a> and others.</p>
+<p>For this assignment, you will only need to learn how to load and select data using Pandas.</p>
+<ul>
+<li><p><strong>LOADING DATA</strong> The core data structure in Pandas is the <code>DataFrame</code>. You will need to visit the Pandas documentation <a href="https://pandas.pydata.org/pandas-docs/stable/reference/">(https://pandas.pydata.org/pandas-docs/stable/reference/)</a> to learn more about the library, but to help you along with a hint, read the documentation on the <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html"><code>pandas.read_csv()</code></a> method.</p></li>
+<li><p><strong>SELECTING DATA</strong> The <a href="http://pandas.pydata.org/pandas-docs/stable/indexing.html">tutorial here on indexing and selecting</a> should be of great use in understanding how to index and select subsets of the data to answer the questions.</p></li>
+<li><p><strong>GROUPING DATA</strong> You may use <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.value_counts.html?highlight=value_counts#pandas.DataFrame.value_counts"><code>DataFrame.value_counts()</code></a> or <a href="https://pandas.pydata.org/pandas-docs/stable/reference/groupby.html"><code>DataFrame.groupby()</code></a> to group the data you need for these questons.</p></li>
+</ul>
+<p><strong>CODE HINTS</strong></p>
+<p>Here is example code that should give you clues about the structure of your code for this part.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>  <span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>  df <span class="op">=</span> pd.read_csv(<span class="st">&#39;your_json_file.json&#39;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>  <span class="co"># code for question 1 ... and so on</span></span></code></pre></div>
+<p>§ <strong>GATHER NON-HAWAII STUDENT INFORMATION</strong></p>
+<p>Now that we have a decent idea of the in-state profile of students going to all campuses in the University of Hawaii system, let’s look at the out-of-state profile. As you may know, many universities have large out-of-state student populations and some universities rely on out-of-state tuition as an important source of operating revenue for the university. Let’s explore what the out of state profile looks like at the flagship Manoa campus.</p>
+<p>For this part you will do well to use an API to assign a state code to each zip code. What you will be expected to do is the following steps:</p>
+<ol type="1">
+<li>aggregate all zip codes from 2014-2019 for the Manoa campus,</li>
+<li>assign a state code to the zip codes,</li>
+<li>get an aggregate count of all enrollment numbers by state from 2014-2019.</li>
+</ol>
+<p>In order to assign state codes, you may use a number of techniques.</p>
+<p><strong>OPTION ONE (SLOWEST): USE AN API</strong></p>
+<p>One option is to use external APIs, such the one free API <a href="https://www.zipcodeapi.com">zipcodeapi.com</a> which allows you to query by zipcode and return a JSON payload which contains information such as city, state, etc. To help you along, you will can just adapt the code below:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>  <span class="im">import</span> requests</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>  <span class="im">import</span> time</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>  <span class="co"># 967xx-969xx are Hawaii zip codes</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>  <span class="cf">if</span> <span class="bu">len</span>(z) <span class="op">==</span> <span class="dv">5</span> <span class="kw">and</span> z[:<span class="dv">3</span>] <span class="kw">not</span> <span class="kw">in</span> [<span class="st">&#39;969&#39;</span>, <span class="st">&#39;968&#39;</span>, <span class="st">&#39;967&#39;</span>]:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>      url <span class="op">=</span> <span class="ss">f&quot;https://www.zipcodeapi.com/rest/</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="ss">              gUA29rOpQB4A2Nt6ZxL69KDokVOKy2xfoR9KZR5iIOTi2rj6GoCaaJtQWxNkcW2q/info.json/</span><span class="sc">{z}</span><span class="ss">/degrees&quot;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>      r <span class="op">=</span> requests.get(url)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>      <span class="cf">if</span> r.status_code <span class="op">==</span> <span class="dv">200</span>:</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>          payload <span class="op">=</span> r.json()</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>          <span class="co"># do work  with  your JSON payload to obtain the state code</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>      <span class="cf">else</span>:</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>          <span class="cf">pass</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a>          <span class="co"># print(r.status_code)</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>      time.sleep(<span class="dv">2</span>)  <span class="co"># </span><span class="al">NOTE</span><span class="co">: the delay is to avoid rate limiting!</span></span></code></pre></div>
+<p>Just remember the JSON payload looks like this (verify for yourself):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>    <span class="fu">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="dt">&quot;zip_code&quot;</span><span class="fu">:</span><span class="st">&quot;40504&quot;</span><span class="fu">,</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="dt">&quot;lat&quot;</span><span class="fu">:</span><span class="fl">38.042391</span><span class="fu">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>    <span class="dt">&quot;lng&quot;</span><span class="fu">:</span><span class="fl">-84.543931</span><span class="fu">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    <span class="dt">&quot;city&quot;</span><span class="fu">:</span><span class="st">&quot;Lexington&quot;</span><span class="fu">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>    <span class="dt">&quot;state&quot;</span><span class="fu">:</span><span class="st">&quot;KY&quot;</span><span class="fu">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>    <span class="dt">&quot;timezone&quot;</span><span class="fu">:{</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>        <span class="dt">&quot;timezone_identifier&quot;</span><span class="fu">:</span><span class="st">&quot;America</span><span class="ch">\/</span><span class="st">New_York&quot;</span><span class="fu">,</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>        <span class="dt">&quot;timezone_abbr&quot;</span><span class="fu">:</span><span class="st">&quot;EDT&quot;</span><span class="fu">,</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>        <span class="dt">&quot;utc_offset_sec&quot;</span><span class="fu">:</span><span class="dv">-14400</span><span class="fu">,</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>        <span class="dt">&quot;is_dst&quot;</span><span class="fu">:</span><span class="st">&quot;T&quot;</span><span class="fu">},</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>    <span class="dt">&quot;acceptable_city_names&quot;</span><span class="fu">:</span><span class="ot">[]</span><span class="fu">,</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>    <span class="dt">&quot;area_codes&quot;</span><span class="fu">:</span><span class="ot">[</span><span class="dv">859</span><span class="ot">]</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>    <span class="fu">}</span></span></code></pre></div>
+<p><strong>OPTION TWO (EASIEST): USE A GEONAMES.ORG PYTHON LIBRARY</strong></p>
+<p>Lucky for us, there is yet another service called <a href="https://geonames.org">Geonames.org</a> which not only has an API, but others have created Python libraries on top of that API. Geonames, much like zipcodeapi.com, provides mappings from zip to city, state and other information. It also provides much, much more if you ever need to obtain latitude or longitude data for your programming and data needs. One such library written for Python is the open source <a href="https://github.com/symerio/pgeocode"><code>pgeocode</code></a>, and you may use this library.</p>
+<p>In order to install it, open a terminal in your JupyterLab session on the Hub and type:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>  <span class="ex">pip</span> install pgeocode</span></code></pre></div>
+<p>Full documentation for the library is here <a href="https://pgeocode.readthedocs.io/en/latest/overview.html">https://pgeocode.readthedocs.io/en/latest/overview.html</a>, but your solution might look something like this:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>  <span class="im">import</span> pgeocode</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>  nomi <span class="op">=</span> pgeocode.Nominatim(<span class="st">&#39;us&#39;</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>  nomi.query_postal_code(<span class="st">&quot;13804&quot;</span>)[<span class="st">&#39;state_code&#39;</span>]</span></code></pre></div>
+<p>Which would return:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>  <span class="st">&#39;ny&#39;</span></span></code></pre></div>
+<p>With this you could craft a solution quite easily to map the zipcode to the state and then build up what is being asked.</p>
+<p><strong>OPTION THREE (EASIER): USE A STATIC FILE FROM GEONAMES.ORG</strong></p>
+<p>Another last option would be to load the full Geonames.org zipcode data file into a DataFrame and query it to obtain the data you’re needing.</p>
+<ul>
+<li>the Geonames file is here: <a href="https://download.geonames.org/export/zip/US.zip">https://download.geonames.org/export/zip/US.zip</a></li>
+</ul>
+<p>You can download it from the terminal with (the capitalization matters):</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a>  <span class="fu">wget</span> https://download.geonames.org/export/zip/US.zip</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>  <span class="fu">unzip</span> US.zip</span></code></pre></div>
+<p>Or you can create a Jupyter cell with the magic command:</p>
+<pre><code>  !wget https://download.geonames.org/export/zip/US.zip
+  !unzip US.zip</code></pre>
+<p>Whichever way you choose, you will then have a file <code>US.txt</code>. Load it into a DataFrame with:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a>  <span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>  df_zip <span class="op">=</span> pandas.read_csv(<span class="st">&quot;US.txt&quot;</span>, header<span class="op">=</span><span class="va">None</span>, sep<span class="op">=</span><span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>)</span></code></pre></div>
+<p>Then you will be able to get the state with something like this:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a>  df_zip[ df_zip[<span class="dv">1</span>]<span class="op">==</span><span class="dv">57641</span> ][<span class="dv">4</span>].item()  <span class="co"># the zero-based index 1st item is zip, 4th the state code</span></span></code></pre></div>
+<p>Which will return:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a>  <span class="st">&#39;SD&#39;</span></span></code></pre></div>
+<p>No matter the method you choose, your solution will include a DataFrame that will simply be the aggregation of the sum of zip codes or something like this (HINT: <code>value_counts()</code> will be useful again):</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">ENROLLMENT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">…</td>
+<td style="text-align: right;">…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AR</td>
+<td style="text-align: right;">911</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ND</td>
+<td style="text-align: right;">110</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WV</td>
+<td style="text-align: right;">610</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DC</td>
+<td style="text-align: right;">86</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DE</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">…</td>
+<td style="text-align: right;">…</td>
+</tr>
+</tbody>
+</table>
+<p>§ <strong>Export that table to a CSV using <code>DataFrame.to_csv('zip_code_summary.csv')</code>.</strong></p>
+<p>Make sure the file name is as specified, so I can verify the contents.</p>
+<p>§ <strong>Plot the top 15 (non-Hawaii) states by enrollment:</strong></p>
+<p>Using the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.plot.html?highlight=plot#pandas.Series.plot"><code>Series.plot(kind='bar'</code>)</a>, plot a simple bar plot of the top 15 states using the solution from the previous part. This is relatively easy and is one line of code.</p>
