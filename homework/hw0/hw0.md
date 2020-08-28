@@ -22,7 +22,7 @@
 
 * Explore JupyterHub Linux console integrating what you learned in the prior parts of this homework
 
-* Listen to the O'Reilly Data Show Podcast from July 18, 2019: Acquiring and shairing high-quality data with Rogen Chen
+* Listen to the O'Reilly Data Show Podcast from July 18, 2019: Acquiring and sharing high-quality data with Roger Chen
 
 * Explore Python for data munging and analysis, with an introduction to CSV and Pandas
 
@@ -47,10 +47,10 @@ As stated in the course announcement [Jupyter (https://jupyter.org)](https://jup
 core platform we will be using in this course and
 is a popular platform for data scientists around the world.  We have a JupyterLab
 setup for this course so that we can operate in a cloud-hosted environment, free from
-some of the resource contraints of running Jupyter on your local machine (though you are free to set
+some of the resource constraints of running Jupyter on your local machine (though you are free to set
 it up on your own and seek my advice if you desire).
 
-You have been given the information about the  Jupyter envitonment we have setup for our course, and
+You have been given the information about the  Jupyter environment we have setup for our course, and
 the underlying Python environment will be using is the [Anaconda (https://anaconda.com)](https://anaconda.com)
 distribution.  It is not necessary for this assignment, but you are free to look at the multitude
 of packages installed with Anaconda, though we will not use the majority of them explicitly.
@@ -130,7 +130,7 @@ and familiarize yourself with your files and basic commands using git as indicat
 
 
 
-### (40%) Listen to the O'Reilly Data Show Podcast from July 18, 2019: Acquiring and shairing high-quality data with Rogen Chen 
+### (40%) Listen to the O'Reilly Data Show Podcast from July 18, 2019: Acquiring and sharing high-quality data with Roger Chen 
 
 Data is one of the most important components of modern business and, of course, data manifests
 in many forms, and involves producers, consumers and value-added uses of data.  Recently,
@@ -140,7 +140,7 @@ are used in ways that were neither approved or known by, the the individual dire
 
 There are a number of interesting movements in data protection, such as the European Union's GDPR
 (General Data Protection Regulation - [https://eugdpr.org](https://eugdpr.org)) that are trying to
-hold companies account for how individual's data are collected, accessed, shared, distrubuted and protected.
+hold companies account for how individual's data are collected, accessed, shared, distributed and protected.
 Some argue these efforts don't go far enough to acknowledge the true value of data and don't provide
 access to controlling data in ways that would benefit the individual directly, should they
 want to have it knowingly used and offered as a product to companies.  In scenarios like these,
@@ -148,7 +148,7 @@ the individual is then brought into the data transaction as a producer, and comp
 consumers that add value to other consumers, etc.
 
 Blockchain has been proposed as a technology that might provide a way to coordinate the
-development of decentralized and distrubuted data "ledgers" that may provide a more complete
+development of decentralized and distributed data "ledgers" that may provide a more complete
 platform to share data, trace it's lineage, but also validate and facilitate data transactions
 between consumers and producers.
 
@@ -203,7 +203,7 @@ from all levels from small municipal data to big government data, from transport
 to education.
 
 To warm up to such datasets, we will be working with an interesting dataset of enrollment data
-from the University of Hawaii system.  This data is in a CSV (comman-separated-values) format
+from the University of Hawaii system.  This data is in a CSV (comma-separated-values) format
 and like many datasets out there, requires a bit of restructuring to derive value from it.
 
 CSV is a format that you will often see as a _de facto_ format for data that is relatively
@@ -251,8 +251,8 @@ You will need to perform the following steps:
 
 &#167;  **USE PANDAS TO LOAD THE CSV DATA TO A DATAFRAME AND ANSWER THE FOLLOWING QUESTIONS:**
 
-1. How many total students were cummulatively enrolled in total from 2014 to 2019?
-2. Which campus had the most cummulatively enrolled students from 2014-2019 (and what is that value)?
+1. How many total students were cumulatively enrolled in total from 2014 to 2019?
+2. Which campus had the most cumulatively enrolled students from 2014-2019 (and what is that value)?
 3. Which campus has the least?
 4. Which Hawaii zip code does the largest number of students come from (across all campuses)?
 5. Which Hawaii zip code does the largest number of students come from for the Manoa flagship campus?
