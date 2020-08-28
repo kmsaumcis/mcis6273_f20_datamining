@@ -165,19 +165,20 @@
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>      time.sleep(<span class="dv">2</span>)  <span class="co"># </span><span class="al">NOTE</span><span class="co">: the delay is to avoid rate limiting!</span></span></code></pre></div>
 <p>Just remember the JSON payload looks like this (verify for yourself):</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>    <span class="fu">{</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="dt">&quot;zip_code&quot;</span><span class="fu">:</span><span class="st">&quot;40504&quot;</span><span class="fu">,</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="dt">&quot;lat&quot;</span><span class="fu">:</span><span class="fl">38.042391</span><span class="fu">,</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>    <span class="dt">&quot;lng&quot;</span><span class="fu">:</span><span class="fl">-84.543931</span><span class="fu">,</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    <span class="dt">&quot;city&quot;</span><span class="fu">:</span><span class="st">&quot;Lexington&quot;</span><span class="fu">,</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>    <span class="dt">&quot;state&quot;</span><span class="fu">:</span><span class="st">&quot;KY&quot;</span><span class="fu">,</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>    <span class="dt">&quot;timezone&quot;</span><span class="fu">:{</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>        <span class="dt">&quot;timezone_identifier&quot;</span><span class="fu">:</span><span class="st">&quot;America</span><span class="ch">\/</span><span class="st">New_York&quot;</span><span class="fu">,</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>        <span class="dt">&quot;timezone_abbr&quot;</span><span class="fu">:</span><span class="st">&quot;EDT&quot;</span><span class="fu">,</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>        <span class="dt">&quot;utc_offset_sec&quot;</span><span class="fu">:</span><span class="dv">-14400</span><span class="fu">,</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>        <span class="dt">&quot;is_dst&quot;</span><span class="fu">:</span><span class="st">&quot;T&quot;</span><span class="fu">},</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>    <span class="dt">&quot;acceptable_city_names&quot;</span><span class="fu">:</span><span class="ot">[]</span><span class="fu">,</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>    <span class="dt">&quot;area_codes&quot;</span><span class="fu">:</span><span class="ot">[</span><span class="dv">859</span><span class="ot">]</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>    <span class="fu">}</span></span></code></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>      <span class="dt">&quot;zip_code&quot;</span><span class="fu">:</span><span class="st">&quot;40504&quot;</span><span class="fu">,</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>      <span class="dt">&quot;lat&quot;</span><span class="fu">:</span><span class="fl">38.042391</span><span class="fu">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>      <span class="dt">&quot;lng&quot;</span><span class="fu">:</span><span class="fl">-84.543931</span><span class="fu">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>      <span class="dt">&quot;city&quot;</span><span class="fu">:</span><span class="st">&quot;Lexington&quot;</span><span class="fu">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>      <span class="dt">&quot;state&quot;</span><span class="fu">:</span><span class="st">&quot;KY&quot;</span><span class="fu">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>      <span class="dt">&quot;timezone&quot;</span><span class="fu">:{</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>          <span class="dt">&quot;timezone_identifier&quot;</span><span class="fu">:</span><span class="st">&quot;America</span><span class="ch">\/</span><span class="st">New_York&quot;</span><span class="fu">,</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>          <span class="dt">&quot;timezone_abbr&quot;</span><span class="fu">:</span><span class="st">&quot;EDT&quot;</span><span class="fu">,</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>          <span class="dt">&quot;utc_offset_sec&quot;</span><span class="fu">:</span><span class="dv">-14400</span><span class="fu">,</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>          <span class="dt">&quot;is_dst&quot;</span><span class="fu">:</span><span class="st">&quot;T&quot;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>      <span class="fu">},</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>      <span class="dt">&quot;acceptable_city_names&quot;</span><span class="fu">:</span><span class="ot">[]</span><span class="fu">,</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>      <span class="dt">&quot;area_codes&quot;</span><span class="fu">:</span><span class="ot">[</span><span class="dv">859</span><span class="ot">]</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a>    <span class="fu">}</span></span></code></pre></div>
 <p><strong>OPTION TWO (EASIEST): USE A GEONAMES.ORG PYTHON LIBRARY</strong></p>
 <p>Lucky for us, there is yet another service called <a href="https://geonames.org">Geonames.org</a> which not only has an API, but others have created Python libraries on top of that API. Geonames, much like zipcodeapi.com, provides mappings from zip to city, state and other information. It also provides much, much more if you ever need to obtain latitude or longitude data for your programming and data needs. One such library written for Python is the open source <a href="https://github.com/symerio/pgeocode"><code>pgeocode</code></a>, and you may use this library.</p>
 <p>In order to install it, open a terminal in your JupyterLab session on the Hub and type:</p>

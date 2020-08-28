@@ -341,18 +341,19 @@ Just remember the JSON payload looks like this (verify for yourself):
 
 ```json
     {
-    "zip_code":"40504",
-    "lat":38.042391,
-    "lng":-84.543931,
-    "city":"Lexington",
-    "state":"KY",
-    "timezone":{
-        "timezone_identifier":"America\/New_York",
-        "timezone_abbr":"EDT",
-        "utc_offset_sec":-14400,
-        "is_dst":"T"},
-    "acceptable_city_names":[],
-    "area_codes":[859]
+      "zip_code":"40504",
+      "lat":38.042391,
+      "lng":-84.543931,
+      "city":"Lexington",
+      "state":"KY",
+      "timezone":{
+          "timezone_identifier":"America\/New_York",
+          "timezone_abbr":"EDT",
+          "utc_offset_sec":-14400,
+          "is_dst":"T"
+      },
+      "acceptable_city_names":[],
+      "area_codes":[859]
     }
 ```
 **OPTION TWO (EASIEST): USE A GEONAMES.ORG PYTHON LIBRARY**
