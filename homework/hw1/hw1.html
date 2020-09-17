@@ -55,7 +55,7 @@
 <ul>
 <li>in your Multindex DataFrame the row indices are nested with <em>cut</em> in the outer index, <em>color</em> in the inner index.</li>
 <li>the columns will be the <em>clarity</em></li>
-<li>the values for a given <code>(cut, color, clarity)</code> will the <em>mean</em> value for that combination. For example, if you were to go into the data and select all <em>Ideal cut</em>, <em>E color</em>, <em>SI1 clarity</em> diamonds and computed the <em>mean</em>, you would insert that into the table for that multi-index and column. HINT: don’t overthink this step as the multi-index, column can be accessed with something like <code>.loc[ (cut, color), clarity]</code> and you can just set the value to the mean for all the rows meeting that criterion from the origin imported table. You WILL have to create a new DataFrame – do not try to replace the original imported DataFrame in-place. This will not go well.</li>
+<li>the values for a given <code>(cut, color, clarity)</code> will the <em>mean price</em> value for that combination. For example, if you were to go into the data and select all <em>Ideal cut</em>, <em>E color</em>, <em>SI1 clarity</em> diamonds and computed the <em>mean price</em>, you would insert that into the table for that multi-index and column. HINT: don’t overthink this step as the multi-index, column can be accessed with something like <code>.loc[ (cut, color), clarity]</code> and you can just set the value to the mean price for all the rows meeting that criterion from the origin imported table. You WILL have to create a new DataFrame – do not try to replace the original imported DataFrame in-place. This will not go well.</li>
 <li>your DataFrame will look something like Figure 1 below.</li>
 </ul>
 <figure>
@@ -121,7 +121,7 @@ $$</span></p>
 </figure>
 <p>Similar concepts apply to continous random variables, but we’ll stick with the discrete case for this part of the assignment.</p>
 <p>§ We want to explore our intuition of the diamonds through the lens of PMF and CDF, so first we’re going to use a very valuable library called <a href="https://seaborn.pydata.org/">Seaborn</a> to get a feel for the data and confirm some intuitions.</p>
-<p>The first thing want to do is look at the cumulative distribution of one variables – <em>carat</em>. Our intuition is that different clarities have different carat distributions in the data. For example, we might expect that the lower the clarity, the more distrubuted the carat. Stated another way, we might find more variability in carat sizes as the clarity gets worse. Let’s look at two ends of the spectrum – the flawless (“FL”) and internally flawlss (“IF”) and the opposite end the slightly included “SI2” and “SI3” clarity diamonds. To get started, let’s take a look at the distribution of diamond clarity.</p>
+<p>The first thing want to do is look at the cumulative distribution of one variable – <em>carat</em>. Our intuition is that different clarities have different carat distributions in the data. For example, we might expect that the lower the clarity, the more distrubuted the carat. Stated another way, we might find more variability in carat sizes as the clarity gets worse. Let’s look at two ends of the spectrum – the flawless (“FL”) and internally flawlss (“IF”) and the opposite end the slightly included “SI2” and “SI3” clarity diamonds. To get started, let’s take a look at the distribution of diamond clarity.</p>
 <ol type="1">
 <li>Produce a count of the diamond clarities using the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.value_counts.html?highlight=value_counts#pandas.DataFrame.value_counts"><code>pandas.DataFrame.value_counts()</code></a> method. Show the count of diamonds on a bar graph using <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html?highlight=plot#pandas.DataFrame.plot"><code>plot(kind="bar")</code></a>.</li>
 <li>What observation can you make about the trend in the count of diamonds in each clarity category?</li>
@@ -137,9 +137,13 @@ $$</span></p>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>    sns.distplot(the_dataframe_with_clarity_X, hist<span class="op">=</span><span class="va">False</span>, hist_kws<span class="op">=</span>kwargs, kde_kws<span class="op">=</span>kwargs, label<span class="op">=</span><span class="st">&quot;clarity_X&quot;</span>)</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>    <span class="co"># repeat for the other clarities you want compare</span></span></code></pre></div>
-<p>You now have a cumulative distribution for each clarity. You will be reminded that the <span class="math inline"><em>y</em></span>-axis shows us the cumulative probability while the <span class="math inline"><em>x</em></span>-axis shows us the carat sizes. The smoothed curve shows the density of the carat for a given probability and uses a smoothing technique called <em>kernel density estimate</em>. After displaying the plot from the code above in your notebook, answer the following questions:</p>
+<p>You now have a cumulative distribution for each clarity. Figure 5 shows you an example of what <strong>one</strong> of the plots might look like.</p>
+<figure>
+<img src="./example_distc_plot_240.png" alt="" /><figcaption>Cumulative distribution plot example</figcaption>
+</figure>
+<p>You will be reminded that the <span class="math inline"><em>y</em></span>-axis shows us the cumulative probability while the <span class="math inline"><em>x</em></span>-axis shows us the carat sizes. The smoothed curve shows the density of the carat for a given probability and uses a smoothing technique called <em>kernel density estimate</em>. After displaying the plot from the code above in your notebook, answer the following questions:</p>
 <ol type="1">
-<li>Which color has the largest relative distribution of high carat diamonds?</li>
+<li>Which clarity has the largest relative distribution of high carat diamonds?</li>
 <li>Which has the largest relative distribution of small diamonds?</li>
 <li>Based on the prior two questions, is this a surprising outcome?</li>
 <li>Which two distributions look most similar?</li>

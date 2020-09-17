@@ -36,6 +36,7 @@ If you choose not to use the provided notebook, you will still need to turn in a
 `.ipynb` Jupyter Notebook and corresponding files according to the instructions in
 this homework.
 
+
 ## ASSIGNMENT TASKS
 ### (35%) Perform Exploratory Data Analysis (EDA) and apply basic statistical concepts to understand the underlying data 
 
@@ -91,11 +92,11 @@ the questions, make sure your indices are as follows:
 
 * in your Multindex DataFrame  the row indices are nested with _cut_ in the outer index, _color_ in the inner index.
 * the columns will be the _clarity_
-* the values for a given `(cut, color, clarity)` will the _mean_ value for that combination.  For example,
+* the values for a given `(cut, color, clarity)` will the _mean price_ value for that combination.  For example,
 if you were to go into the data and select all _Ideal cut_, _E color_, _SI1 clarity_ diamonds and computed the
-_mean_, you would insert that into the table for that multi-index and column.  HINT: don't overthink this step
+_mean price_, you would insert that into the table for that multi-index and column.  HINT: don't overthink this step
 as the multi-index, column can be accessed with something like `.loc[ (cut, color), clarity]` and you can just set
-the value to the mean for all the rows meeting that criterion from the origin imported table.  You WILL have to
+the value to the mean price for all the rows meeting that criterion from the origin imported table.  You WILL have to
 create a new DataFrame -- do not try to replace the original imported DataFrame in-place.  This will not go well.
 * your DataFrame will look something like Figure 1 below.
 
@@ -224,7 +225,7 @@ assignment.
 &#167;  We want to explore our intuition of the diamonds through the lens of PMF and CDF, so first we're going to
 use a very valuable library called [Seaborn](https://seaborn.pydata.org/) to get a feel for the data and confirm some intuitions.
 
-The first thing want to do is look at the cumulative distribution of one variables -- _carat_.  Our
+The first thing want to do is look at the cumulative distribution of one variable -- _carat_.  Our
 intuition is that different clarities have different carat distributions in the data.  For example, we might
 expect that the lower the clarity, the more distrubuted the carat.  Stated another way, we might find
 more variability in carat sizes as the clarity gets worse.  Let's look at two ends of the spectrum --
@@ -256,13 +257,19 @@ this template of code should help you plot what you need:
 
 ```
 
-You now have a cumulative distribution for each clarity.  You will be reminded that the $y$-axis shows us
+You now have a cumulative distribution for each clarity. Figure 5 shows you an example of what **one** of the plots
+might look like. 
+
+![Cumulative distribution plot example](./example_distc_plot_240.png)
+
+
+You will be reminded that the $y$-axis shows us
 the cumulative probability while the $x$-axis shows us the carat sizes.  The smoothed curve shows the density
 of the carat for a given probability and uses a smoothing technique called _kernel density estimate_.
 After displaying the plot from the
 code above in your notebook, answer the following questions:
 
-1. Which color has the largest relative distribution of high carat diamonds?
+1. Which clarity has the largest relative distribution of high carat diamonds?
 2. Which has the largest relative distribution of small diamonds?
 3. Based on the prior two questions, is this a surprising outcome?
 4. Which two distributions look most similar?
