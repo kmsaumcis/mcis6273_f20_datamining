@@ -1,0 +1,86 @@
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"></code></pre></div>
+<h1 id="mcis6273-data-mining-prof.-maull-fall-2020-hw3">MCIS6273 Data Mining (Prof. Maull) / Fall 2020 / HW3</h1>
+<p><strong>This assignment is worth up to 15 POINTS to your grade total if you complete it on time.</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Points <br/>Possible</th>
+<th style="text-align: center;">Due Date</th>
+<th style="text-align: center;">Time Commitment <br/>(estimated)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">Wednesday, November 18 @ Midnight</td>
+<td style="text-align: center;"><em>up to</em> 8 hours</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>GRADING:</strong> Grading will be aligned with the completeness of the objectives.</p></li>
+<li><p><strong>INDEPENDENT WORK:</strong> Copying, cheating, plagiarism and academic dishonesty <em>are not tolerated</em> by University or course policy. Please see the syllabus for the full departmental and University statement on the academic code of honor.</p></li>
+</ul>
+<h2 id="objectives">OBJECTIVES</h2>
+<ul>
+<li>Perform Bayesian text classification</li>
+</ul>
+<h2 id="what-to-turn-in">WHAT TO TURN IN</h2>
+<p>You are being encouraged to turn the assignment in using the provided Jupyter Notebook. To do so, make a directory in your Lab environment called <code>homework/hwN</code>. Put all of your files in that directory. Then zip that directory, rename it with your name as the first part of the filename (e.g. <code>maull_hwN_files.zip</code>), then download it to your local machine, then upload the <code>.zip</code> to Blackboard.</p>
+<p>If you do not know how to do this, please ask, or visit one of the many tutorials out there on the basics of using zip in Linux.</p>
+<p>If you choose not to use the provided notebook, you will still need to turn in a <code>.ipynb</code> Jupyter Notebook and corresponding files according to the instructions in this homework.</p>
+<h2 id="assignment-tasks">ASSIGNMENT TASKS</h2>
+<h3 id="perform-bayesian-text-classification">(100%) Perform Bayesian text classification</h3>
+<p>Text classification is an important application area of machine learning. Indeed, the early advances in the field were in text and image processing. We are now beneficiaries of the libraries that provide us the foundation for a variety of techniques to do sophisticated text analytics and process withuout much effort.</p>
+<p>With text classification, one goal we might like to accomplish is determine the original of particular text. What once used to be the arena of computational linguists and computer scientists, is now growing in <a href="https://jitp.commons.gc.cuny.edu/a-survey-of-digital-humanities-programs/">computational digital humanities</a>, but is <a href="https://www.chronicle.com/article/the-digital-humanities-debacle/">not without issues</a>. In this assignment we are going to use Bayesian techniques to process a corpus, or body of text, with the expressed goal of classifying it. In fact, we’re going to take multiple texts and generate a classifier that (with some work), will be able to distinguish between multiple authors.</p>
+<p>Laying out the intuition of the technique, let’s abstractly think about the problem at hand. An author usually writes in a particular style, uses specific words, chooses particular topics, and as such, these things contribute to a “profile” (loosely speaking) of the author’s works. More concretely, the probability that Albert Einstein used a word like “thou” is much lower than the probability that Shakespeare would use the same word. Ultimately with enough examples of the writings of a particular author, the easier it would be to establish the probabilities of certain words, phrases and even punctuation usage. While we are going to choose to classify authors, the same technique could be used to classify content themes, for example, classifying texts about <em>philosophy</em> versus texts about <em>turtles</em>.</p>
+<p>Bayesian techniques are a mainstain, and the ease with which Bayes classifiers can be trained make it a technique that can be fast to implement and get results that are often very accurate.</p>
+<p>In the interest of time and resouces, we’re going to develop a simple Bayesian text classifier to distinguish between the writings of three philosophers – <a href="https://plato.stanford.edu/entries/aristotle/">Aristotle</a>, <a href="https://plato.stanford.edu/entries/plato/">Plato</a> and <a href="https://plato.stanford.edu/entries/hume/">David Hume</a>. Under ordinary circumstances we would like to have as many documents from each of these authors as possible – instead, we will train from 3 documents each and test against 3 more. Again, if we were going to develop a much more robust classifier we would likely choose a much larger number of documents if they were possible. Luckily, there are enough writings to have enough to work with in this abbreviated exploration.</p>
+<p>At the heart of document classification is the <em>model</em> for document features. One popular model is the TF-IDF or Term Frequency Inverse Document Frequency. The intuition behind analyzing words in documents hinges on the following:</p>
+<ul>
+<li>terms that are frequent <em>in documents</em> are given higher importance than those that are infrequent,</li>
+<li>terms that are frequent <em>across</em> documents are not considered as important;</li>
+</ul>
+<p>that is <em>common</em> words across an entire corpus are <em>discounted</em> while those that are <em>common</em> within documents are <em>boosted</em>. This is an effective way to differentiate since the intuition that the things that make your writing unique are amplified, while those that are not differentiators will count less.</p>
+<p>To realize the TF-IDF, we will need to break apart the two components TF (or <strong>term frequency</strong>) and IDF (<strong>inverse document frequency</strong>) and then conjoin them.</p>
+<p><strong>Term frequency (TF)</strong> is a simple concept and is exactly as it says: the <em>counts</em> of terms in a document. So for a term (word) <span class="math inline"><em>t</em></span> and document <span class="math inline"><em>d</em></span>, the TF is just the number of occurences of <span class="math inline"><em>t</em></span> in <span class="math inline"><em>d</em></span>,</p>
+<p><span class="math display">tf(<em>t</em>, <em>d</em>) = |<em>t</em> ∈ <em>d</em>|</span></p>
+<p><strong>Inverse document frequency (IDF)</strong> provides a way to determine if a terms is rare or common given <em>all</em> documents <span class="math inline"><em>D</em></span>, and is logarithmically scaled so rare terms avoid completely disappearing. Thus,</p>
+<p><span class="math display">$$
+\textrm{idf}(t,D) = \frac{\big| D \big|}{ 1 + \big| \{t \in d | d \in D \} \big| }
+$$</span></p>
+<p><strong>TF-IDF</strong> is thus: for a set of documents (corpus) <span class="math inline"><em>D</em></span> and document <span class="math inline"><em>d</em> ∈ <em>D</em></span> and terms <span class="math inline"><em>t</em> ∈ <em>d</em></span>,</p>
+<p><span class="math display">tfidf(<em>t</em>, <em>d</em>, <em>D</em>) = tf(<em>t</em>, <em>d</em>, <em>D</em>) × idf(<em>t</em>, <em>D</em>)</span></p>
+<p>Luckily, <code>sklearn</code> implements TF-IDF for us in the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html?highlight=vectorizer#sklearn.feature_extraction.text.TfidfVectorizer"><code>sklearn.feature_extraction.text.TfidfVectorizer</code></a> class. The underlying implementation uses the words as the feature matrix where the TF-IDF is computed over every document input to the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html?highlight=vectorizer#sklearn.feature_extraction.text.TfidfVectorizer.transform"><code>vectorizer.fit_transform()</code></a> method.</p>
+<p>Now that we’ve implemented to the primary machinery of the method, let’s bring back Bayesian. Recall the Bayesian method:</p>
+<p><span class="math display">$$ \Pr(C \big| w_1, \ldots, w_n) = \Pr( C ) \prod_i^n \Pr(  w_i \big| C ) $$</span></p>
+<p>where <span class="math inline"><em>C</em></span> is the document class (Plato or class <code>A</code>, Hume or class <code>B</code> and Aristotle or class <code>C</code>) and <span class="math inline"><em>w</em><sub><em>i</em></sub></span> the words in the document. Concretely, a document <span class="math inline"><em>D</em><sub><em>i</em></sub></span> has some probability <span class="math inline"><em>P</em><sub><em>i</em></sub></span> based on the occurrence of the words <span class="math inline"><em>w</em><sub><em>i</em></sub></span> in that document, and that a classifier will decide the class <span class="math inline"><em>Ĉ</em></span> of document <span class="math inline"><em>D</em><sub><em>i</em></sub></span> by computing</p>
+<p><span class="math display">$$ \hat{C} = \mathrm{argmax}_C \Pr( C ) \prod_i^n \Pr(  w_i \big| C )$$</span></p>
+<p>by training the classifier on some labeled data. Once trained the classifier can be tested and then used on unlabelled data to classify the author. While this exercise is decidely oversimplified (we’d not really be all that interested in classifying the works of only 3 authors), you can extend this to other domains where perhaps you’re not classifying authors, but styles, topics or document complexity.</p>
+<p>Completing the assignment will require you use the provided notebook and corresponding data files. This notebook can be found in <code>example_notebook.ipynb</code>. Study it closely.</p>
+<p>§ Using the notebook provided and corresponding files, you are to write a Python function to load the training data. Use the dictionary map in the variable <code>training_map</code>. Your function will take the files (in the order they appear in <code>training_map</code>) and pass the data into the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn-feature-extraction-text-tfidfvectorizer"><code>TfidfVectorizer</code></a> vectorizer. You will need to set the parameter to the constructor to <code>input='file'</code> and the <code>stop_words</code> to <code>'english'</code> (e.g. initialize the vectorizer to <code>TfidfVectorizer(input='file', stop_words='english')</code>.</p>
+<ul>
+<li><strong>You will just need to show the new function and the initialization of the vectorizer in this step.</strong> This will be one or two cells at most.</li>
+<li>You will use <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer.fit_transform"><code>fit_transform()</code></a> with the parameter being a list of the training files.</li>
+</ul>
+<p>§ Now that you have a vectorizer which effectively builds the data structure to hold the TF-IDF of all the words which appear for each document, you can move to the training phase for the Bayesian classifier. Look in the sample notebook for guidance. You will take as input the vectorizer output (the documents vectorized by TF-IDF) and the corresponding classes (in the order they appear in the original dictionary map) and pass that into the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html#sklearn.naive_bayes.MultinomialNB.fit"><code>MultinomialNB.fit()</code></a> method.</p>
+<ul>
+<li><strong>Show the initialization of your <code>MultinomialNB()</code> classifier and the application of the <code>fit()</code> method.</strong></li>
+</ul>
+<p>§ Now that you have a vectorizer and a classifier trained, let’s classify some documents. The vectorizer you created in the first step has a <a href=""><code>transform</code></a> method, which you can use to vectorize a new document and pass as test input to the classifier. Once you have the vectorized version of the document, you can use the classifier’s <a href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html#sklearn.naive_bayes.MultinomialNB.predict"><code>MultinomialNB.predict(test_data)</code></a> method, which will return the class label according to the classifier.</p>
+<p>In your notebook do the following:</p>
+<ol type="1">
+<li><p><strong>Write a function to take as input a vectorized document and trained classifier and return the predicted label for the document.</strong> See the sample notebook for guidance.</p></li>
+<li><p><strong>Test on the files in the <code>data/philosopher_name/test</code> folders and show the output of your test.</strong> You can wrap your function from the previous step in a loop to run through all data in the folder. This will be short enough to be coded in a single Jupyter cell.</p></li>
+</ol>
+<p>To get the full points, please show your work.</p>
+<p>§ You have now built your first document classifier! Now answer the following questions:</p>
+<ol type="1">
+<li>How many of the documents did your classifier correctly classify?</li>
+</ol>
+<p>§ The classifier <code>predict</code> method only returns the label, but you can get the probabilities assigned to all classes using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html#sklearn.naive_bayes.MultinomialNB.predict_proba"><code>predict_proba()</code></a>. Please take a look at the example notebook to see how that is done.</p>
+<p><strong>Answer the following questions inside your notebook:</strong></p>
+<ol type="1">
+<li>Make an observation about the class probabilities. What did you notice?</li>
+<li>Provide some commentary on how the probabilities might be improved (you can provide you answer as a thought exercise or if you have time, provide some example code).</li>
+</ol>
