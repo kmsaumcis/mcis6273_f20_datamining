@@ -1,4 +1,4 @@
-# MCIS6272 Fall 2022
+# MCIS6273 Fall 2022
 
 
 ## Homeworks
